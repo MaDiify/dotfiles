@@ -49,15 +49,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = "DejaVuSansMono Nerd Font Mono":pixelsize=10;1 
-;font-1 = FontAwesome:pixelsize=10;1
-;font-0 = RobotoMono Nerd Font:pixelsize=10;1
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Symbols Nerd Font:style:2048-em:pixelsize=9
+font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=9
+font-2 = Font Awesome 5 Free Regular:style=Regular:pixelsize=9
+font-3 = Font Awesome 5 Free Solid:style=Solid:pixelsize=9
+font-4 = Roboto:size=9
 
 modules-left = i3
-modules-center = mpd
+modules-center = xwindow
 modules-right = pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
@@ -98,15 +97,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = "DejaVuSansMono Nerd Font Mono":pixelsize=10;1 
-;font-1 = FontAwesome:pixelsize=10;1
-;font-0 = RobotoMono Nerd Font:pixelsize=10;1
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Symbols Nerd Font:style:2048-em:pixelsize=9
+font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=9
+font-2 = Font Awesome 5 Free Regular:style=Regular:pixelsize=9
+font-3 = Font Awesome 5 Free Solid:style=Solid:pixelsize=9
 
 modules-left = i3
-modules-center = mpd
+modules-center = xwindow
 modules-right = pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
@@ -126,7 +123,9 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label-font = 5 
+label = %title:0:200:...%
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -169,7 +168,7 @@ label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
@@ -238,37 +237,38 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlo1
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <ramp-signal> <label-connected> 
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
+format-disconnected = "ﲁ"
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eth1
+interface = eno2
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
+format-disconnected-prefix = ""
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -310,11 +310,11 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 5
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 5
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 5
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
@@ -376,7 +376,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
