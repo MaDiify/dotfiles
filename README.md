@@ -1,4 +1,4 @@
 # dotfiles
-my Artix / Arch dotfiles
+my Arch dotfiles
 
-currently using i3-gaps with polybar, i3lock and rofi
+currently using i3-gaps with i3status
